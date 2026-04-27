@@ -1,5 +1,8 @@
 # 🚢 Titanic Survival Analysis
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ayushagarwal13/gfg-ai-ml-projects/blob/main/titanic-survival-analysis/titanic_eda.ipynb)
+
+> Run this notebook instantly in Google Colab 🚀
 ## 📌 Overview
 This project performs Exploratory Data Analysis (EDA) on the Titanic dataset to identify key factors that influenced passenger survival.
 
