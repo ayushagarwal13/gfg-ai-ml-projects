@@ -1,0 +1,195 @@
+time series analysis
+
+ARIMA and SARIMA Models
+
+ARIMA- Electricity bill has a pattern jan- Feb low May- June high
+SARIMA- Based on events
+
+TIME SERIES FORECASTING NOTES
+
+1. Time Series Data
+Data collected over time.
+Examples:
+- Sales
+- Stock prices
+- Passengers
+
+--------------------------------------------------
+
+2. Components of Time Series
+
+TimeSeries = Trend + Seasonality + Residual
+
+Trend:
+Overall increase/decrease.
+
+Seasonality:
+Repeating pattern.
+
+Residual:
+Random noise/error.
+
+--------------------------------------------------
+
+3. Seasonal vs Non-Seasonal
+
+Seasonal:
+- Repeats after fixed interval
+- Example: Festival sales
+
+Non-Seasonal:
+- No repeating pattern
+- Example: Stock prices
+
+--------------------------------------------------
+
+4. Stationary Data
+
+Mean and variance remain constant over time.
+
+ARIMA requires stationary data.
+
+--------------------------------------------------
+
+5. Making Data Stationary
+
+Methods:
+- Differencing
+- Log Transformation
+
+Differencing Formula:
+
+y' = y(t) - y(t-1)
+
+--------------------------------------------------
+
+6. ARIMA Model
+
+ARIMA(p,d,q)
+
+p = autoregression
+d = differencing
+q = moving average
+
+Used for non-seasonal data.
+
+--------------------------------------------------
+
+7. SARIMA Model
+
+SARIMA(p,d,q)(P,D,Q,m)
+
+Used for seasonal data.
+
+m = seasonal cycle length
+
+--------------------------------------------------
+
+8. ACF and PACF
+
+ACF:
+Used to find q value.
+
+PACF:
+Used to find p value.
+
+--------------------------------------------------
+
+9. Decomposition
+
+Breaks data into:
+- Trend
+- Seasonal
+- Residual
+
+Code:
+
+decomposition = seasonal_decompose(data)
+
+--------------------------------------------------
+
+10. Additive Model
+
+y = Trend + Seasonality + Residual
+
+Use when seasonality is constant.
+
+--------------------------------------------------
+
+11. Multiplicative Model
+
+y = Trend * Seasonality * Residual
+
+Use when seasonality increases with trend.
+
+--------------------------------------------------
+
+12. ADF Test
+
+Checks stationarity.
+
+p-value < 0.05
+Stationary
+
+p-value > 0.05
+Non-Stationary
+
+--------------------------------------------------
+
+13. Basic Workflow
+
+1. Load data
+2. Convert datetime
+3. Set index
+4. Plot data
+5. Decompose series
+6. Check stationarity
+7. Apply differencing
+8. Plot ACF/PACF
+9. Build ARIMA/SARIMA
+10. Forecast future values
+
+--------------------------------------------------
+
+14. Important Libraries
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+--------------------------------------------------
+
+15. ARIMA Code
+
+from statsmodels.tsa.arima.model import ARIMA
+
+model = ARIMA(data, order=(p,d,q))
+model_fit = model.fit()
+
+forecast = model_fit.forecast(steps=5)
+
+--------------------------------------------------
+
+16. SARIMA Code
+
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+
+model = SARIMAX(
+    data,
+    order=(p,d,q),
+    seasonal_order=(P,D,Q,m)
+)
+
+--------------------------------------------------
+
+17. Memory Tricks
+
+ARIMA -> Non-seasonal forecasting
+SARIMA -> Seasonal forecasting
+
+ACF -> q
+PACF -> p
+
+Differencing -> removes trend
+Decomposition -> separates components
