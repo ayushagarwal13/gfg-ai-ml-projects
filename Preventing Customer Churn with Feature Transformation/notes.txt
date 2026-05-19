@@ -1,0 +1,5 @@
+for classification at the end we use random forest
+
+linear refression gives output in number so it comes in regression
+logistic regression gives output in class so it comes in classification
+random forest comes in both
