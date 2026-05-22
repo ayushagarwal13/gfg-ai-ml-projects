@@ -1,0 +1,15 @@
+Aritifical intelligence algorithm have intelligent data. Eg- path finding algos dijectra algo
+ML algo also make decisions based on data which we provide to it.
+DL algo are also data backed but we use special architecture called neural networks inspired by human brain.
+If we apply DL algo in language it is called NLP and if in images or video it is called computer vision.
+AI vs GenAi- AI can predict Eg what can be the next movie but it cannot write the script of new movie.
+it can tell you this is a image of cat but it cannot make the new image of cat. 
+But gen AI can do all this.
+LLM are just the brain. 
+Agentic Ai- are the agents which work for us. LLM can tell you the information like ticket availability but cannot book on your behalf.
+features are the inputs labels are the output.
+from keras library you can directly use dataset. no need to download from Kaggle and use it.
+train_images, train_labels image and lebel is its numbering
+784 pixels will give 10 labels.
+sequential is an blank array.
+ANN identifies patters in images so we are using it here.
