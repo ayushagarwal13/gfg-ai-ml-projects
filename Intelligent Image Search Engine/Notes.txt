@@ -1,0 +1,124 @@
+The data which we cannot publically provide to the llm then we use RAG
+#RAG- Retrieval Argumented Generation.
+
+It is a technique used with LLMs to give them external knowledge before generating an answer.
+
+#Full Flow of RAG-
+
+User Question
+      ↓
+Convert Question to Embedding
+      ↓
+Search Similar Data in Vector DB
+      ↓
+Retrieve Relevant Chunks
+      ↓
+Send Chunks + Question to LLM
+      ↓
+LLM Generates Final Answer
+
+# Components of RAG
+
+1. Documents
+
+These can be:
+
+PDFs
+Excel files
+websites
+company docs
+databases
+notes
+
+2. Chunking
+
+Large documents are split into smaller pieces called chunks.
+
+3. Embeddings
+
+Text is converted into numbers/vectors.
+
+4. Vector Database
+
+Stores embeddings.
+
+Popular vector DBs:
+
+ChromaDB
+FAISS
+Pinecone
+Weaviate
+
+Purpose:
+
+fast similarity search
+
+5. Retrieval
+
+When user asks a question:
+
+"What is reimbursement policy?"
+
+The question is also converted into embeddings.
+
+Then vector DB finds:
+
+most similar chunks
+
+6. Augmentation
+
+Retrieved chunks are attached to prompt.
+
+Example:
+
+Context:
+"Employees receive reimbursement within 30 days."
+
+Question:
+"What is reimbursement policy?"
+
+7. Generation
+
+LLM now generates answer using retrieved context.
+
+That is the “Generation” part in RAG.
+
+Visual Architecture
+                DOCUMENTS
+          (PDFs, Websites, Docs)
+                     ↓
+               Chunking
+                     ↓
+              Embeddings
+                     ↓
+              Vector DB
+                     ↓
+────────────────────────────────
+User Question
+        ↓
+Question Embedding
+        ↓
+Similarity Search
+        ↓
+Relevant Chunks Retrieved
+        ↓
+Chunks + Question → LLM
+        ↓
+Final Answer
+
+Why RAG is Powerful
+Without RAG
+
+LLM:
+
+guesses
+hallucinates
+outdated knowledge
+With RAG
+
+LLM:
+
+uses real documents
+answers accurately
+supports private/company data
+works with latest information
