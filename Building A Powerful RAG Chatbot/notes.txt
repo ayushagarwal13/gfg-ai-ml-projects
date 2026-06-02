@@ -1,0 +1,6 @@
+Model	Type
+Gemini 1.5 Flash	LLM
+gemini-embedding-001	Embedding Model
+text-embedding-004	Embedding Model
+database-chroma
+sleep time of 30 sec is used so that api key does not get exhaust.
